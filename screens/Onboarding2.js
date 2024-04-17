@@ -12,7 +12,7 @@ export default function Onboarding2({navigation}) {
 
       <View>
           <Image
-            resizeMethod='contain'
+            resizeMethod='auto'
             source ={require('../assets/o2.png')}
 
             style={{height:hp('55%'),width: wp('100%')}}/> 

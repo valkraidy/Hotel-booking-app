@@ -10,7 +10,7 @@ export default function Onboarding3({navigation}) {
 
       <View>
           <Image
-            resizeMethod='contain'
+            resizeMethod='auto'
             source ={require('../assets/o3.png')}
 
             style={{height:hp('55%'),width: wp('100%')}}/> 

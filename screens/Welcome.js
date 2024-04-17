@@ -7,13 +7,14 @@ import { StatusBar } from 'expo-status-bar'
 
 import React from 'react'
 
-export default function Welcome() {
+export default function Welcome({navigation}) {
+
   return (
-    <View style={{}}>
+    <View style={{padding:10}}>
 
 <View style={{flex:1,alignItems:'center',justifyContent:'center',top:hp('25%')}}>
           <Image
-            resizeMethod='contain'
+        
             source ={require('../assets/welc.png')}
 
             style={{height:hp('11%'),width: wp('20%')}}
@@ -34,9 +35,12 @@ export default function Welcome() {
 
         {/* TouchableOpacity */}
 
-        <View style={{justifyContent:'center',alignItems:'center',top: hp('50%')}}>
+        <View style={{justifyContent:'center',alignItems:'center',top: hp('53%')}}>
 
-        <TouchableOpacity style={{height:hp('7%'),width:wp ('90%'),backgroundColor:'#3D5BF6',borderRadius:46}} >
+        <TouchableOpacity style={{height:hp('7%'),width:wp ('90%'),backgroundColor:'#3D5BF6',borderRadius:46}} 
+        onPress={()=>navigation.navigate("Createaccount")}
+        
+        >
           <Text style={{color:'#fff',textAlign:'center',top:hp ('2%'),fontSize:hp('2%'),fontWeight:700}}>Create Account</Text>
 
         </TouchableOpacity>
