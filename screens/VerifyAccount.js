@@ -3,12 +3,12 @@ import React from 'react'
 import { useState } from 'react';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar'
-// import { AntDesign } from '@expo/vector-icons';
+ import { AntDesign } from '@expo/vector-icons';
 import { TextInput } from 'react-native';
-// import { Ionicons } from '@expo/vector-icons';
 
 
-export default function Createaccount() {
+
+export default function Createaccount({navigation}) {
     const [fullName, setFullName] = useState('');
     // const [phoneNumber, setPhoneNumber] = useState('');
     // const [password, setPassword] = useState('');
@@ -17,9 +17,15 @@ export default function Createaccount() {
 
         <View>
 
-        {/* <AntDesign name="arrowleft" size={24} color="black" /> */}
+        <TouchableOpacity
+        onPress={()=>navigation.navigate("Createaccount")}
+         style={{top:hp('8%')}}>
 
-        <View style={{top:hp('5%')}}>
+<AntDesign name="arrowleft" size={26} color="black" /> 
+</TouchableOpacity>
+
+
+        <View style={{top:hp('13%')}}>
 
             <Text style={{fontSize:24,fontWeight:700}}> 
                   Verify Your Account
@@ -34,8 +40,7 @@ export default function Createaccount() {
 
             </View>
 
-            <View style={{top: hp('15%'),paddingBottom:('8%')}}>
-
+            <View style={{top: hp('23%')}}>
             <View>
                 <Text style={{fontWeight:600,paddingBottom:('3%')}}>
                       Verification code
@@ -44,6 +49,7 @@ export default function Createaccount() {
         style={{ height: 40, borderColor: '#E2E4EA', borderWidth: 1,height:hp('6%'),width: wp('100%'),borderRadius:15 ,paddingBottom:('3%')}}
   
         value={fullName}
+     
         onChangeText={(text) => setFullName(text)}
         placeholder="Resend in 2:14"
       />
